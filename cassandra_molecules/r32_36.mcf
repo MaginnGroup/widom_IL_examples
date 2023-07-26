@@ -1,0 +1,81 @@
+!*******************************************************************************
+!Molecular connectivity file
+!*******************************************************************************
+!r32_36.mcf - created by mBuild
+
+!Atom Format
+!index type element mass charge vdw_type parameters
+!vdw_type="LJ", parms=epsilon sigma
+!vdw_type="Mie", parms=epsilon sigma repulsion_exponent dispersion_exponent
+
+# Atom_Info
+5
+1    c3_s3    C    12.011    0.40546700    LJ    59.549    3.710
+2    f_s3    F    18.998    -0.25078300    LJ    28.831    2.822
+3    h2_s3    H    1.008    0.04804950    LJ    9.395    2.128
+4    f_s3    F    18.998    -0.25078300    LJ    28.831    2.822
+5    h2_s3    H    1.008    0.04804950    LJ    9.395    2.128
+
+!Bond Format
+!index i j type parameters
+!type="fixed", parms=bondLength
+
+# Bond_Info
+4
+1     1     2     fixed     1.350
+2     1     3     fixed     1.096
+3     1     4     fixed     1.350
+4     1     5     fixed     1.096
+
+!Angle Format
+!index i j k type parameters
+!type="fixed", parms=equilibrium_angle
+!type="harmonic", parms=force_constant equilibrium_angle
+
+# Angle_Info
+6
+1     2     1     3     harmonic   25714.5    108.79
+2     2     1     4     harmonic   35678.3    107.36
+3     2     1     5     harmonic   25714.5    108.79
+4     4     1     3     harmonic   25714.5    108.79
+5     3     1     5     harmonic   19625.6    110.20
+6     4     1     5     harmonic   25714.5    108.79
+
+!Dihedral Format
+!index i j k l type parameters
+!type="none"
+!type="CHARMM", parms=a0 a1 delta
+!type="OPLS", parms=c0 c1 c2 c3
+!type="harmonic", parms=force_constant equilibrium_dihedral
+
+# Dihedral_Info
+0
+
+!Improper Format
+!index i j k l type parameters
+!type="harmonic", parms=force_constant equilibrium_improper
+
+# Improper_Info
+0
+
+!Fragment Format
+!index number_of_atoms_in_fragment branch_point other_atoms
+
+# Fragment_Info
+1
+1    5    1    2    3    4    5
+
+
+# Fragment_Connectivity
+0
+
+!Intra Scaling
+!vdw_scaling    1-2 1-3 1-4 1-N
+!charge_scaling 1-2 1-3 1-4 1-N
+
+# Intra_Scaling
+0. 0. 0.0000 1.
+0. 0. 0.0000 1.
+
+
+END

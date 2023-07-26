@@ -1,0 +1,88 @@
+
+# Run_Name
+empty_ideal_gas_widom.out
+
+# Verbose_Log
+false
+
+# Sim_Type
+nvt
+
+# Nbr_Species
+2
+
+# VDW_Style
+lj cut 12
+
+# Charge_Style
+coul cut 12
+
+# Seed_Info
+261240782 920341624
+
+# Rcutoff_Low
+1.0
+
+# Molecule_Files
+cassandra_molecules/r32_36.mcf 1
+cassandra_molecules/r125_100_new.mcf 1
+
+# Box_Info
+1
+cubic
+100.00
+
+# Temperature_Info
+298.15
+
+# Move_Probability_Info
+
+# Prob_Translation
+1.0
+0.0 0.0
+
+# Done_Probability_Info
+
+!# Pregen_Info
+!ts_in.H ts_in.xyz
+
+# Start_Type
+make_config 0 0
+
+# Simulation_Length_Info
+units       steps
+prop_freq   1
+coord_freq  1
+run         1
+
+# Widom_Insertion
+true
+cbmc 1000000000 1 100
+cbmc 1000000000 1 100
+
+# Run_Type
+production 10
+
+# CBMC_Info
+kappa_ins 1
+kappa_dih 1
+rcut_cbmc 6.5
+
+# Property_Info 1
+energy_intraq
+energy_interq
+energy_self
+energy_recip
+energy_total
+pressure
+volume
+mass_density
+energy_intra
+
+# Fragment_Files
+species3/frag1/frag1.dat  1
+species4/frag1/frag1.dat  2
+species4/frag2/frag2.dat  3
+!---------------------------------------------------------one line per fragment
+
+END

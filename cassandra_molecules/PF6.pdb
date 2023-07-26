@@ -1,0 +1,21 @@
+REMARK   1 CREATED WITH MDTraj 1.9.6, 2021-08-13
+CRYST1   30.000   30.000   30.000  90.00  90.00  90.00 P 1           1 
+MODEL        0
+ATOM      1  P1  RES A   0      15.000  15.000  15.000  1.00  0.00           P  
+ATOM      2  F1  RES A   0      14.990  15.019  16.600  1.00  0.00           F  
+ATOM      3  F2  RES A   0      15.010  14.981  13.400  1.00  0.00           F  
+ATOM      4  F3  RES A   0      16.141  16.122  15.000  1.00  0.00           F  
+ATOM      5  F4  RES A   0      13.859  13.878  15.000  1.00  0.00           F  
+ATOM      6  F5  RES A   0      13.879  16.141  14.980  1.00  0.00           F  
+ATOM      7  F6  RES A   0      16.121  13.859  15.020  1.00  0.00           F  
+TER       8      RES A   0
+ENDMDL
+CONECT    1    2    3    4
+CONECT    1    6    7
+CONECT    2    1
+CONECT    3    1
+CONECT    4    1
+CONECT    5    1
+CONECT    6    1
+CONECT    7    1
+END

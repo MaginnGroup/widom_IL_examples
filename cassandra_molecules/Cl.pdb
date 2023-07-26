@@ -1,0 +1,7 @@
+REMARK   1 CREATED WITH MDTraj 1.9.6, 2021-08-13
+CRYST1   30.000   30.000   30.000  90.00  90.00  90.00 P 1           1 
+MODEL        0
+ATOM      1 Cl1  RES A   0      15.000  15.000  15.000  1.00  0.00          Cl  
+TER       2      RES A   0
+ENDMDL
+END

@@ -1,0 +1,110 @@
+!*******************************************************************************
+!Molecular connectivity file
+!*******************************************************************************
+!r125_100_new.mcf - created by mBuild
+
+!Atom Format
+!index type element mass charge vdw_type parameters
+!vdw_type="LJ", parms=epsilon sigma
+!vdw_type="Mie", parms=epsilon sigma repulsion_exponent dispersion_exponent
+
+# Atom_Info
+8
+1    c3_1_s4    C    12.011    0.22406700    LJ    59.381    3.805
+2    c3_2_s4    C    12.011    0.50088600    LJ    27.494    3.617
+3    f_1_s4    F    18.998    -0.16713100    LJ    28.315    3.201
+4    h2_s4    H    1.008    0.12158300    LJ    6.494    2.488
+5    f_1_s4    F    18.998    -0.16713100    LJ    28.315    3.201
+6    f_2_s4    F    18.998    -0.17075800    LJ    17.633    2.644
+7    f_2_s4    F    18.998    -0.17075800    LJ    17.633    2.644
+8    f_2_s4    F    18.998    -0.17075800    LJ    17.633    2.644
+
+!Bond Format
+!index i j type parameters
+!type="fixed", parms=bondLength
+
+# Bond_Info
+7
+1     1     2     fixed     1.538
+2     1     3     fixed     1.350
+3     1     4     fixed     1.096
+4     1     5     fixed     1.350
+5     2     6     fixed     1.350
+6     2     7     fixed     1.350
+7     2     8     fixed     1.350
+
+!Angle Format
+!index i j k type parameters
+!type="fixed", parms=equilibrium_angle
+!type="harmonic", parms=force_constant equilibrium_angle
+
+# Angle_Info
+12
+1     1     2     6     harmonic   33262.8    109.24
+2     1     2     7     harmonic   33262.8    109.24
+3     1     2     8     harmonic   33262.8    109.24
+4     2     1     3     harmonic   33262.8    109.24
+5     2     1     4     harmonic   23248.8    110.22
+6     2     1     5     harmonic   33262.8    109.24
+7     3     1     4     harmonic   25714.5    108.79
+8     3     1     5     harmonic   35678.3    107.36
+9     5     1     4     harmonic   25714.5    108.79
+10    6     2     7     harmonic   35678.3    107.36
+11    6     2     8     harmonic   35678.3    107.36
+12    7     2     8     harmonic   35678.3    107.36
+
+!Dihedral Format
+!index i j k l type parameters
+!type="none"
+!type="CHARMM", parms=a0 a1 delta
+!type="OPLS", parms=c0 c1 c2 c3
+!type="harmonic", parms=force_constant equilibrium_dihedral
+
+# Dihedral_Info
+15
+1     3     1     2     6     CHARMM     0.000    3.000    0.000
+2     3     1     2     6     CHARMM     5.021    1.000  180.000
+3     4     1     2     6     CHARMM     0.651    3.000    0.000
+4     5     1     2     6     CHARMM     0.000    3.000    0.000
+5     5     1     2     6     CHARMM     5.021    1.000  180.000
+6     3     1     2     7     CHARMM     0.000    3.000    0.000
+7     3     1     2     7     CHARMM     5.021    1.000  180.000
+8     4     1     2     7     CHARMM     0.651    3.000    0.000
+9     5     1     2     7     CHARMM     0.000    3.000    0.000
+10    5     1     2     7     CHARMM     5.021    1.000  180.000
+11    3     1     2     8     CHARMM     0.000    3.000    0.000
+12    3     1     2     8     CHARMM     5.021    1.000  180.000
+13    4     1     2     8     CHARMM     0.651    3.000    0.000
+14    5     1     2     8     CHARMM     0.000    3.000    0.000
+15    5     1     2     8     CHARMM     5.021    1.000  180.000
+
+!Improper Format
+!index i j k l type parameters
+!type="harmonic", parms=force_constant equilibrium_improper
+
+# Improper_Info
+0
+
+!Fragment Format
+!index number_of_atoms_in_fragment branch_point other_atoms
+
+# Fragment_Info
+2
+1    5    1    2    3    4    5
+2    5    2    1    6    7    8
+
+
+# Fragment_Connectivity
+1
+1    1    2
+
+!Intra Scaling
+!vdw_scaling    1-2 1-3 1-4 1-N
+!charge_scaling 1-2 1-3 1-4 1-N
+
+# Intra_Scaling
+0. 0. 0.5000 1.
+0. 0. 0.8333 1.
+
+
+END

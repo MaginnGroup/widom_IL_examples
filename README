@@ -1,0 +1,61 @@
+This directory contains the necessary files to generate a pure ionic liquid 
+trajectory file with LAMMPS and perform Widom insertions of 
+difluoromethane (R-32) and pentafluoroethane (R-125) on the trajectory 
+frames.  The chosen ionic liquid for this example is 
+1-n-butyl-3-methylimidazolium tetrafluoroborate (BMIM-BF4).
+
+First, run LAMMPS using lmp.inp as the input file.
+For the corresponding article, the trajectory was output in the custom 
+dump style, but this input file will result in the trajectory being written 
+in the portable binary XTC format, which uses less storage space and doesn't 
+need to be converted before use, unlike custom dump files. If you want to use 
+custom style dump files instead, the required input file lines are provided 
+but commented out. Originally, the snapshot at production timestep 0 was 
+included in the dump file but manually removed later.  The delay option in 
+dump_modify is now used to omit that snapshot so the snapshots written are the
+same as those used for the Widom insertion simulations.
+
+
+
+Prior to running the Widom insertion simulation in Cassandra, fragment libraries
+must be generated using the library_setup.py script included with Cassandra:
+
+library_setup.py [path to Cassandra] cas_widom.inp cassandra_molecules/BMIM.pdb cassandra_molecules/BF4.pdb cassandra_molecules/r32_36.pdb cassandra_molecules/r125_100_new.pdb
+
+
+Replace [path to Cassandra] with the path to your Cassandra executable.  Simply having 
+the Cassandra executable on your shell search path and including only the file name of your
+Cassandra executable will NOT work, at least with the current version at time of writing. 
+If library_setup.py is not on your path, write the path to it.
+
+To run the Widom insertion simulation with Umax = 708 and estimate appropriate smaller Umax values 
+with the same parameters and settings as for the article, execute the following command:
+
+cassandra.exe cas_widom.inp
+
+Note that your Cassandra executable may not be named cassandra.exe, and in fact probably is not, 
+so replace cassandra.exe with the name of the Cassandra executable you want to use 
+if it is on your path, or replace it with the path your Cassandra executable if it is not 
+on your path. Frame <w> values are written to cas_widom.out.spec3.wprp for R-32 and 
+cas_widom.out.spec4.wprp for R-125.  Note that w is referred to as widom_var in the output files. 
+The W_ij arrays for R-32 and R-125 discussed in the article are written to cas_widom.out.spec3.wprp2 
+and cas_widom.out.spec4.wprp2, respectively.  Shifted chemical potential results are written near the 
+end of the log file, along with overlap information and Umax recommendations. Extra results that could 
+be used to manually estimate recommended Umax with a <w> relative tolerance other than the 
+default (10^-10) are written to cas_widom.out.spec3.emax and cas_widom.out.spec4.emax as described 
+in the article.
+
+Despite using the same random number seeds as the corresponding simulation performed for the article,
+this input file will not give exactly identical results because the simulation was performed with 
+64 threads.  Even if you were to run this with the same number of threads and same version of Cassanda, 
+the results would not be identical because there is non-deterministic parallel task scheduling.
+Repeat simulations will only be deterministically identical if only a single thread is used.
+
+To compute Henry's law constants, you need the <w> of R-32 and R-125 in an empty box with known volume, 
+as discussed in the article.  To compute these values, run the following:
+
+cassandra.exe empty_ideal_gas_widom.inp
+
+Note that for the empty box simulation, species 1 is R-32 and species 2 is R-125, although they still use the 
+fragment libraries in directories species3/ and species4/ because they were species 3 and species 4 in the 
+cas_widom simulation.
