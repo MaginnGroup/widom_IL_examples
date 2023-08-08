@@ -59,3 +59,14 @@ cassandra.exe empty_ideal_gas_widom.inp
 Note that for the empty box simulation, species 1 is R-32 and species 2 is R-125, although they still use the 
 fragment libraries in directories species3/ and species4/ because they were species 3 and species 4 in the 
 cas_widom simulation.
+
+The Python script used to generate the GCMC P(µ') data required to make the P(x) isotherm is provided in 
+the gcmc/ directory, with file paths changed for the directory arrangement here.
+
+
+Python scripts and notebooks for analysis are included in the analysis/ directory.  They are only partially 
+cleaned and are not necessarily ready-to-use, considering parts of them are specific to the files and 
+directory arrangement used and some of the analysis requires other simulations besides the example. 
+However, by following the details in the article and using the documentation and example provided
+for reference, you should be able to replicate the LAMMPS and Cassandra simulations described in the 
+article.

@@ -1,0 +1,76 @@
+;
+;   File r32.top  was generated
+;   By user: rdefever (239529)
+;   On host: maginnfe.crc.nd.edu
+;   At date: Fri. July  5 17:38:34 2020
+;
+;   This is a standalone topology file
+;
+;   Created by:
+;   ParmEd:       create_ff.py, VERSION 3.2.0
+;   Executable:   create_ff.py
+;   Library dir:  /usr/local/gromacs/share/gromacs/top
+;   Command line:
+;     create_ff.py
+;
+
+
+[ moleculetype ]
+; Name            nrexcl
+R32          3
+
+[ atoms ]
+;   nr       type  resnr residue  atom   cgnr    charge       mass  typeB    chargeB      massB
+; residue    1 RES rtp RES q -0.0
+    1          C      1    R32      C      1 0.43960000  12.010780   ; qtot 0.439600
+    2          F      1    R32      F      2 -0.26138000  18.998403   ; qtot 0.178220
+    3          F      1    R32      F      3 -0.26138000  18.998403   ; qtot -0.083160
+    4          H      1    R32      H      4 0.04158000   1.007947   ; qtot -0.041580
+    5          H      1    R32      H      5 0.04158000   1.007947   ; qtot -0.000000
+
+[ bonds ]
+;    ai     aj funct         c0         c1         c2         c3
+      2      1     1   0.13690 298653.920000
+      3      1     1   0.13690 298653.920000
+      4      1     1   0.10940 277566.560000
+      5      1     1   0.10940 277566.560000
+
+[ angles ]
+;    ai     aj     ak funct         c0         c1         c2         c3
+      2      1      3     1   108.7000000 735.237910
+      2      1      4     1   108.6000000 499.852161
+      2      1      5     1   108.6000000 499.852161
+      3      1      4     1   108.6000000 499.852161
+      3      1      5     1   108.6000000 499.852161
+      4      1      5     1   113.6000000 293.086454
+
+[ moleculetype ]
+; Name            nrexcl
+R32AL          3
+
+[ atoms ]
+;   nr       type  resnr residue  atom   cgnr    charge       mass  typeB    chargeB      massB
+; residue    1 RES rtp RES q -0.0
+    1          C      1    RAL      C      1 0.43960000  12.010780   ; qtot 0.439600
+    2          F      1    RAL      F      2 -0.26138000  18.998403   ; qtot 0.178220
+    3          F      1    RAL      F      3 -0.26138000  18.998403   ; qtot -0.083160
+    4          H      1    RAL      H      4 0.04158000   1.007947   ; qtot -0.041580
+    5          H      1    RAL      H      5 0.04158000   1.007947   ; qtot -0.000000
+
+[ bonds ]
+;    ai     aj funct         c0         c1         c2         c3
+      2      1     1   0.13690 298653.920000
+      3      1     1   0.13690 298653.920000
+      4      1     1   0.10940 277566.560000
+      5      1     1   0.10940 277566.560000
+
+[ angles ]
+;    ai     aj     ak funct         c0         c1         c2         c3
+      2      1      3     1   108.7000000 735.237910
+      2      1      4     1   108.6000000 499.852161
+      2      1      5     1   108.6000000 499.852161
+      3      1      4     1   108.6000000 499.852161
+      3      1      5     1   108.6000000 499.852161
+      4      1      5     1   113.6000000 293.086454
+
+
